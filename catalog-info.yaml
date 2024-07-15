@@ -1,0 +1,25 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: testrun-after-cert-change
+  title: testrun-after-cert-change
+  annotations:
+    janus-idp.io/tekton: testrun-after-cert-change
+    tektonci/build-namespace: demo
+    github.com/project-slug: granatengeorg-de/testrun-after-cert-change
+    sonarqube.org/project-key: granatengeorg-de_testrun-after-cert-change
+    backstage.io/kubernetes-id: testrun-after-cert-change
+    argocd/app-name: testrun-after-cert-change
+    prometheus.io/rule: container_memory_usage_bytes{pod=~"testrun-after-cert-change-.*"}|pod,rate(container_cpu_usage_seconds_total{pod=~"testrun-after-cert-change-.*"}[5m])|pod
+  tags:
+    - spring-boot
+    - java
+    - maven
+    - tekton
+    - argocd
+    - renovate
+    - sonarqube
+spec:
+  type: service
+  owner: granatengeorg-de
+  lifecycle: experimental
